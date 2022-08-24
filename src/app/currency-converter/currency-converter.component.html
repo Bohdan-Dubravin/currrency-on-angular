@@ -1,0 +1,41 @@
+<div class="container">
+  <h1>Currency converter</h1>
+  <div class="currency-wrapper">
+    <div class="input__container">
+      <div class="currency">
+        <input
+          class="input__field"
+          (input)="firstCurrecyChange()"
+          placeholder="first input"
+          type="number"
+          [(ngModel)]="firstAmount"
+        />
+      </div>
+      <app-drop-down
+        (selectedCurrency)="chageCurrencyOne($event)"
+        [currenciesList]="allRates"
+        [defaultCurrency]="select1"
+      ></app-drop-down>
+    </div>
+    <div class="currency">
+      <div class="input__container">
+        <input
+          class="input__field"
+          (input)="secondCurrecyChange()"
+          placeholder="second input"
+          type="number"
+          [(ngModel)]="secondAmount"
+        />
+        <app-drop-down
+          (selectedCurrency)="chageCurrencyTwo($event)"
+          [currenciesList]="allRates"
+          [defaultCurrency]="select2"
+        ></app-drop-down>
+      </div>
+    </div>
+  </div>
+  <p class="currency-right">
+    {{ firstAmount | currency: select1 }} =
+    {{ secondAmount | currency: select2 }}
+  </p>
+</div>

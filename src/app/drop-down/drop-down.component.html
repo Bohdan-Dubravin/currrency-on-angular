@@ -1,0 +1,26 @@
+<div class="dropDown">
+  <div #toggleButton class="dropDown__toggler" (click)="toggleMenu()">
+    <img
+      class="dropDown__icon"
+      *ngIf="!isShow"
+      src="../../assets/down-arrow-svgrepo-com.svg"
+      alt="icon-open"
+    />
+    <img
+      class="dropDown__icon"
+      *ngIf="isShow"
+      src="../../assets/icons8-close.svg"
+      alt="icon-open"
+    />
+    {{ currentCurrecy }}
+  </div>
+  <ul #menu class="dropDown__menu" *ngIf="isShow">
+    <li
+      (click)="selectCurrency(i)"
+      *ngFor="let i of currenciesList"
+      class="dropDown__item"
+    >
+      {{ i }}
+    </li>
+  </ul>
+</div>

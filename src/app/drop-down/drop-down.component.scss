@@ -1,0 +1,51 @@
+.dropDown {
+  width: 250px;
+  background-color: #0071eb;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  border-radius: 10px;
+  position: relative;
+
+  &__toggler {
+    padding: 10px;
+    max-height: 300px;
+    cursor: pointer;
+  }
+
+  &__icon {
+    position: absolute;
+    height: 23px;
+    width: 23px;
+    right: 12px;
+    top: 11px;
+    cursor: pointer;
+    pointer-events: none;
+  }
+
+  &__menu {
+    font-size: 15px;
+    top: 30px;
+    left: 0;
+    right: 0;
+    border: 1px solid black;
+    border-radius: 10px;
+    position: absolute;
+    z-index: 2;
+    background-color: #fff;
+    color: #333;
+    padding: 10px;
+    max-height: 200px;
+    overflow-y: scroll;
+  }
+
+  &__item {
+    cursor: pointer;
+    padding: 5px 0;
+
+    &:hover {
+      background-color: #0071eb;
+      color: #fff;
+    }
+  }
+}
